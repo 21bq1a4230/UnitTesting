@@ -24,11 +24,12 @@ class DoublyLinkedList:
         lt = []
         while val:
             lt.append(val.data)
+            val = val.next
         return lt
 
     def Insertion(self, data, pos):
         newNode = Node(data)
-        if pos == "Head":
+        if pos == "HEAD":
             if self.head is None:
                 self.head = newNode
                 return
@@ -71,7 +72,7 @@ class DoublyLinkedList:
         nextNode.prev = prevNode
 
     def DeleteAtGivenPosition(self,pos):
-        count = 1
+        count = 0
         val = self.head
         while count != pos - 1:
             val = val.next
